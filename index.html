@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú del Restaurante</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            /*scroll-behavior: smooth;*/
+        }
+
+       body {
+            background-color: #fb2e00;
+            opacity: 1;
+            background: linear-gradient(135deg, #fb2e0055 25%, transparent 25%) 
+            -4px 0/ 8px 8px, linear-gradient(225deg, #fb2e00 25%, transparent 25%) 
+            -4px 0/ 8px 8px, linear-gradient(315deg, #fb2e0055 25%, transparent 25%) 
+            0px 0/ 8px 8px, linear-gradient(45deg, #fb2e00 25%, #fe5934 25%) 
+            0px 0/ 8px 8px;
+            text-align: center;
+            padding: 10px;
+        }
+
+        h1 {
+            color:#fb2e00;
+            padding: 3px 10px;
+            font-size: 45px;
+            margin-bottom: 5px;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+
+        h2 {
+            color:#fb2e00;
+            width: 150px;
+            font-size: 18px;
+            font-style: italic;
+            margin-bottom: 1px;
+            margin-top: 15px;
+            margin-left: 25px;
+        }
+
+        h3{
+            color: #fb2e00;
+            font-size: 36px;
+            font-family: 'Times New Roman', Times, serif;
+            
+        }
+
+        h4 {
+            color: #fb2e00;
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding: 10px 15px;
+        }
+
+
+        .contenedor {
+            max-width: 400px;
+            min-width: 200px;
+            margin: auto;
+            background: #fff19e;
+            padding:  0px;
+            border-radius: 10px;
+            /*box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.75);*/
+            box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.75);
+            /*box-shadow: rgba(50, 50, 93, 0.95) 0px 6px 12px -2px, rgba(0, 0, 0, 0.975) 0px 3px 7px -3px;*/
+        }
+
+        .contenedor01 {
+            background: #fff19e;
+            max-width: 400px;
+            height: 500px;
+            display: flex;
+            justify-content: space-evenly;
+            max-width: 400px;
+            margin: auto;
+            padding:  0px;
+            border-radius: 10px;
+            box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.75);
+        }
+
+        .categoria {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fb2e00;
+            border-bottom: 2px solid #d35400;
+            padding: 10px 0px 5px 20px;
+            text-align: left;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-name {
+            font-weight: bold;
+            width: 170px;
+            font-family: roboto;
+            font-weight: 900;
+            font-size: 18px;
+        }
+
+        .price {
+            color: #fb2e00;
+            font-weight: bold;
+        }
+
+        .col_uno {
+            max-width: 175px;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        .col_dos {
+            max-width: 175px;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+
+        button {
+            padding: 15px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff19e;
+            background: linear-gradient(90deg, #ff0066, #ff6600);
+            border: 2px solid red;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.75);
+            width: 150px;
+            cursor: pointer;
+        }
+
+        .btn01 {
+            padding: 15px 15px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff19e;
+            background: linear-gradient(90deg, #ff0066, #ff6600);
+            border: 2px solid red;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.75);
+            width: 350px;
+            cursor: pointer;
+            margin-top: 15px;
+            margin-bottom: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            font-family: roboto;
+            font-weight: bold;
+        }
+
+        .cat-01 {
+        padding-left: 100px;
+        }
+
+        .cat-02 {
+        padding-left: 60px;
+        }
+
+        .cat-03 {
+        padding-left: 140px;
+        }
+
+        .cat-04 {
+        padding-left: 60px;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 15px;
+            font-weight: bold;
+            color: black;
+        }
+
+        img {
+            width: 72px;
+            height: 36px;
+        }
+
+        .logo {
+            padding-left: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <section id="Portada">
+        <div class="contenedor">
+            <h1>Motel Eden</h1>
+            <h3>Menú <a class="logo"><img src="img/LOGO EDEN 02.png" alt=""></a></h3>
+            <h4>Room Service Extension "0"</h4>
+        </div>
+    </section>
+    
+        <div class="contenedor01">
+            <div class="col_uno">
+                <a href="#Desayunos"><button>DESAYUNOS</button></a>
+                <a href="#Entradas"><button>ENTRADAS</button></a>
+                <a href="#Comidas"><button>COMIDAS</button></a>
+                <a href="#Postres"><button>POSTRES Y CAFE</button></a>
+                <a href="#Botanas"><button>BOTANAS</button></a>
+            </div>
+            <div class="col_dos">  
+                <a href="#Refrescos"><button>REFRESCOS</button></a>
+                <a href="#Cervezas"><button>CERVEZAS</button></a>
+                <a href="#Licores"><button>LICORES</button></a>
+                <a href="#Bebidas"><button>BEBIDAS PREPARADAS</button></a>
+                <a href="#Farmacia"><button>FARMACIA</button></a>
+            </div>
+        </div>
+    
+
+    <section id="Desayunos">
+        <div class="contenedor">
+            <div class="categoria">Desayunos</div>
+            <div class="menu-item"><span class="item-name">Pan con mermelada</span><span class="price">$30.00</span></div>
+            <div class="menu-item"><span class="item-name">Hot Cakes</span><span class="price">$60.00</span></div>
+            <div class="menu-item"><span class="item-name">Huevos al gusto</span><span class="price">$60.00</span></div>
+            <div class="menu-item"><span class="item-name">Huevos c/Jamón /Tocino /Chorizo</span><span class="price">$70.00</span></div>
+            <div class="menu-item"><span class="item-name">Huevos a la mexicana</span><span class="price">$70.00</span></div>
+            <div class="menu-item"><span class="item-name">Huevos con machacado</span><span class="price">$155.00</span></div>
+            <div class="menu-item"><span class="item-name">Quesadilla sincronizada</span><span class="price">$90.00</span></div>
+            <div class="menu-item"><span class="item-name">Hot Cakes con huevo y tocino</span><span class="price">$125.00</span></div>
+            <div class="menu-item"><span class="item-name">Chilaquiles rojos o verdes</span><span class="price">$100.00</span></div>
+            <div class="menu-item"><span class="item-name">Chilaquiles rojos o verdes c/huevo</span><span class="price">$125.00</span></div>
+            <div class="menu-item"><span class="item-name">Chilaquiles rojos o verdes c/pollo</span><span class="price">$150.00</span></div>
+            <a href="#Portada"><button class="btn01">MENU PRINCIPAL</button></a> 
+        </div>
+    </section>
+            
+    <section id="Entradas">
+        <div class="contenedor">
+            <div class="categoria">Entradas</div>
+            <h2>Ensaladas</h2>
+            <div class="menu-item"><span class="item-name">Ensalada de atún</span><span class="price">$70.00</span></div>
+            <div class="menu-item"><span class="item-name">Ensalada Cesar</span><span class="price">$70.00</span></div>
+            <h2>Sopas</h2>
+            <div class="menu-item"><span class="item-name">Maruchan Res</span><span class="price">$40.00</span></div>
+            <div class="menu-item"><span class="item-name">Maruchan Pollo</span><span class="price">$40.00</span></div>
+            <div class="menu-item"><span class="item-name">Maruchan Camarón</span><span class="price">$40.00</span></div>
+            <div class="menu-item"><span class="item-name">Maruchan Camarón c/chile</span><span class="price">$40.00</span></div>
+            <h2>Pastas</h2>
+            <div class="menu-item"><span class="item-name">Fetuccini Alfredo con pollo</span><span class="price">$190.00</span></div>
+            <div class="menu-item"><span class="item-name">Fetuccini Alfredo con camarón</span><span class="price">$210.00</span></div>
+            <a href="#Portada"><button class="btn01">MENU PRINCIPAL</button></a>
+        </div>
+    </section>
+
+    <section id="Comidas">
+        <div class="contenedor">
+            <div class="categoria">Comidas</div>
+            <h2>Hamburguesas y Sandwiches</h2>
+            <div class="menu-item"><span class="item-name">Sandwich de jamón y queso</span><span class="price">$70.00</span></div>
+            <div class="menu-item"><span class="item-name">Club Sandwich</span><span class="price">$120.00</span></div>
+            <div class="menu-item"><span class="item-name">Hamburguesa sencilla</span><span class="price">$100.00</span></div>
+            <div class="menu-item"><span class="item-name">Hamburguesa con queso</span><span class="price">$110.00</span></div>
+            <div class="menu-item"><span class="item-name">Hamburguesa con queso y tocino</span><span class="price">$120.00</span></div>
+            <div class="menu-item"><span class="item-name">Hamburguesa con queso jamón y tocino</span><span class="price">$130.00</span></div>
+            <h2>Carnes</h2>
+            <div class="menu-item"><span class="item-name">Tacos de carnitas</span><span class="price">$100.00</span></div>
+            <div class="menu-item"><span class="item-name">Tacos de cochinita pibil</span><span class="price">$100.00</span></div>
+            <div class="menu-item"><span class="item-name">Tacos de chilorio</span><span class="price">$100.00</span></div>
+            <div class="menu-item"><span class="item-name">Carne seca preparada</span><span class="price">$100.00</span></div>
+            <div class="menu-item"><span class="item-name">Guacamole con totopos</span><span class="price">$100.00</span></div>
+            <div class="menu-item"><span class="item-name">Tabla de carnes frias</span><span class="price">$140.00</span></div>
+            <div class="menu-item"><span class="item-name">Tacos de carne</span><span class="price">$150.00</span></div>
+            <div class="menu-item"><span class="item-name">Milanesa de res (200 grs)</span><span class="price">$150.00</span></div>
+            <div class="menu-item"><span class="item-name">Nachos con carne asada</span><span class="price">$180.00</span></div>
+            <div class="menu-item"><span class="item-name">Rib Eye</span><span class="price">$250.00</span></div>
+            <div class="menu-item"><span class="item-name">Arrachera (250 grs)</span><span class="price">$250.00</span></div>
+            <h2>Pescado y Mariscos</h2>
+            <div class="menu-item"><span class="item-name">Quesadilla con camarón</span><span class="price">$200.00</span></div>
+            <div class="menu-item"><span class="item-name">Camaron empanizado</span><span class="price">$200.00</span></div>
+            <div class="menu-item"><span class="item-name">Ceviche de camarón</span><span class="price">$200.00</span></div>
+            <div class="menu-item"><span class="item-name">camarón agua chile</span><span class="price">$200.00</span></div>
+            <div class="menu-item"><span class="item-name">Salmón</span><span class="price">$250.00</span></div>
+            <h2>Pollo</h2>
+            <div class="menu-item"><span class="item-name">Flautas de queso</span><span class="price">$90.00</span></div>
+            <div class="menu-item"><span class="item-name">Flautas de pollo</span><span class="price">$90.00</span></div>
+            <div class="menu-item"><span class="item-name">Alitas bufalo</span><span class="price">$100.00</span></div>
+            <div class="menu-item"><span class="item-name">Boneless</span><span class="price">$100.00</span></div>
+            <div class="menu-item"><span class="item-name">Pechuga Cordon Blue</span><span class="price">$120.00</span></div>
+            <a href="#Portada"><button class="btn01">MENU PRINCIPAL</button></a>
+        </div>
+    </section>
+
+    <section id="Postres">
+        <div class="contenedor">
+            <div class="categoria">Postres y Café</div>
+            <h2>Postres</h2>
+            <div class="menu-item"><span class="item-name">Chocolate Snikers</span><span class="price">$30.00</span></div>
+            <div class="menu-item"><span class="item-name">Chocolate Milky Way</span><span class="price">$30.00</span></div>
+            <div class="menu-item"><span class="item-name">Pastel de queso</span><span class="price">$50.00</span></div>
+            <div class="menu-item"><span class="item-name">Crepa de Nutella c/ plátano</span><span class="price">$75.00</span></div>
+            <div class="menu-item"><span class="item-name">Crepa de Philadelfia y mermelada</span><span class="price">$80.00</span></div>
+            <h2>Helados</h2>
+            <div class="menu-item"><span class="item-name">Cornetto chocolate</span><span class="price">$40.00</span></div>
+            <div class="menu-item"><span class="item-name">Cornetto oreo</span><span class="price">$40.00</span></div>
+            <div class="menu-item"><span class="item-name">Magnum almendra</span><span class="price">$40.00</span></div>
+            <div class="menu-item"><span class="item-name">Magnum vainilla</span><span class="price">$40.00</span></div>
+            <h2>Café</h2>
+            <div class="menu-item"><span class="item-name">Cafe cortado</span><span class="price">$30.00</span></div>
+            <div class="menu-item"><span class="item-name">Cafe expresso</span><span class="price">$30.00</span></div>
+            <div class="menu-item"><span class="item-name">Cafe americano</span><span class="price">$30.00</span></div>
+            <div class="menu-item"><span class="item-name">Cafe capuchino</span><span class="price">$30.00</span></div>
+            <a href="#Portada"><button class="btn01">MENU PRINCIPAL</button></a>
+        </div>
+    </section>
+
+    <section id="Botanas">
+        <div class="contenedor">
+            <div class="categoria">Botanas</div>
+            <div class="menu-item"><span class="item-name">Cacahuates enchilados</span><span class="price">$30.00</span></div>
+            <div class="menu-item"><span class="item-name">Cacahuates salados</span><span class="price">$30.00</span></div>
+            <div class="menu-item"><span class="item-name">Cacahuates japoneses</span><span class="price">$30.00</span></div>
+            <div class="menu-item"><span class="item-name">Papas Sabritas</span><span class="price">$50.00</span></div>
+            <div class="menu-item"><span class="item-name">Palomitas</span><span class="price">$50.00</span></div>
+            <div class="menu-item"><span class="item-name">Aceitunas preparadas</span><span class="price">$60.00</span></div>
+            <div class="menu-item"><span class="item-name">Papas a la francesa</span><span class="price">$60.00</span></div>
+            <div class="menu-item"><span class="item-name">Molletes</span><span class="price">$60.00</span></div>
+            <div class="menu-item"><span class="item-name">dedos de queso</span><span class="price">$60.00</span></div>
+            <div class="menu-item"><span class="item-name">Jalapeños rellenos de queso</span><span class="price">$80.00</span></div>
+            <div class="menu-item"><span class="item-name">Nachos con queso</span><span class="price">$80.00</span></div>
+            <a href="#Portada"><button class="btn01">MENU PRINCIPAL</button></a>
+        </div>
+    </section>
+
+    <section id="Refrescos">
+        <div class="contenedor">
+            <div class="categoria">Refrescos</div>
+            <div class="menu-item"><span class="item-name">Jugo Manzana</span><span class="price">$40.00</span></div>
+            <div class="menu-item"><span class="item-name">Jugo Durazno</span><span class="price">$40.00</span></div>
+            <div class="menu-item"><span class="item-name">Jugo Mango</span><span class="price">$40.00</span></div>
+            <div class="menu-item"><span class="item-name">Té negro</span><span class="price">$45.00</span></div>
+            <div class="menu-item"><span class="item-name">Té verde</span><span class="price">$45.00</span></div>
+            <div class="menu-item"><span class="item-name">Gatorade limón</span><span class="price">$50.00</span></div>
+            <div class="menu-item"><span class="item-name">Gatorade naranja</span><span class="price">$50.00</span></div>
+            <div class="menu-item"><span class="item-name">Agua natural</span><span class="price">$30.00</span></div>
+            <div class="menu-item"><span class="item-name">Agua mineral</span><span class="price">$30.00</span></div>
+            <div class="menu-item"><span class="item-name">Agua quinada</span><span class="price">$30.00</span></div>
+            <div class="menu-item"><span class="item-name">Coca Cola</span><span class="price">$30.00</span></div>
+            <div class="menu-item"><span class="item-name">Coca Cola light</span><span class="price">$30.00</span></div>
+            <div class="menu-item"><span class="item-name">Fresca</span><span class="price">$30.00</span></div>
+            <div class="menu-item"><span class="item-name">Sprite</span><span class="price">$30.00</span></div>
+            <div class="menu-item"><span class="item-name">Fanta</span><span class="price">$30.00</span></div>
+            <div class="menu-item"><span class="item-name">Sidral</span><span class="price">$30.00</span></div>
+            <div class="menu-item"><span class="item-name">Red Bull</span><span class="price">$50.00</span></div>
+            <div class="menu-item"><span class="item-name">Boost</span><span class="price">$50.00</span></div>
+            <div class="menu-item"><span class="item-name">Leche</span><span class="price">$30.00</span></div>
+            <div class="menu-item"><span class="item-name">Hielera</span><span class="price">$15.00</span></div>
+            <a href="#Portada"><button class="btn01">MENU PRINCIPAL</button></a>
+        </div>
+    </section>
+
+    <section id="Cervezas">
+        <div class="contenedor">
+            <!--<div class="categoria">Cervezas</div>-->
+            <div class="categoria"><span class="cat-name">Cervezas</span><span class="cat-01">Individual</span><span class="cat-02">SIX</span></div>
+            <div class="menu-item"><span class="item-name">Vaso michelado</span><span class="price">$20.00</span><span class="price">n/aplica</span></div>
+            <div class="menu-item"><span class="item-name">Chabela</span><span class="price">$60.00</span><span class="price">n/aplica</span></div>
+            <div class="menu-item"><span class="item-name">Victoria (210 ml)</span><span class="price"></span><span class="price">$120.00</span></div>
+            <div class="menu-item"><span class="item-name">Coronita (210 ml)</span><span class="price"></span><span class="price">$120.00</span></div>
+            <div class="menu-item"><span class="item-name">Amstel Ultra</span><span class="price">$40.00</span><span class="price">$165.00</span></div>
+            <div class="menu-item"><span class="item-name">Bud Light</span><span class="price">$40.00</span><span class="price">$165.00</span></div>
+            <div class="menu-item"><span class="item-name">Corona Light</span><span class="price">$40.00</span><span class="price">$165.00</span></div>
+            <div class="menu-item"><span class="item-name">Heineken</span><span class="price">$40.00</span><span class="price">$165.00</span></div>
+            <div class="menu-item"><span class="item-name">Indio</span><span class="price">$40.00</span><span class="price">$165.00</span></div>
+            <div class="menu-item"><span class="item-name">Michelob Ultra</span><span class="price">$40.00</span><span class="price">$165.00</span></div>
+            <div class="menu-item"><span class="item-name">Modelo Especial</span><span class="price">$40.00</span><span class="price">$165.00</span></div>
+            <div class="menu-item"><span class="item-name">Negra Modelo</span><span class="price">$40.00</span><span class="price">$165.00</span></div>
+            <div class="menu-item"><span class="item-name">Tecate Light</span><span class="price">$40.00</span><span class="price">$165.00</span></div>
+            <div class="menu-item"><span class="item-name">XX Lager</span><span class="price">$40.00</span><span class="price">$165.00</span></div>
+            <a href="#Portada"><button class="btn01">MENU PRINCIPAL</button></a>
+        </div>
+    </section>
+
+    <section id="Licores">
+        <div class="contenedor">
+            <!--<div class="categoria">Licores</div>-->
+            <div class="categoria"><span class="cat-name">Licores</span><span class="cat-03">Copa</span><span class="cat-04">Botella</span></div>
+            <h2>Ron</h2>
+            <div class="menu-item"><span class="item-name">Bacardi blanco </span><span class="price">$45.00</span><span class="price">$400.00</span></div>
+            <div class="menu-item"><span class="item-name">Bacardi añejo</span><span class="price">$50.00</span><span class="price">$500.00</span></div>
+            <h2>Brandy</h2>
+            <div class="menu-item"><span class="item-name">Presidente</span><span class="price">$30.00</span><span class="price">$300.00</span></div>
+            <div class="menu-item"><span class="item-name">Don Pedro</span><span class="price">$40.00</span><span class="price">$350.00</span></div>
+            <div class="menu-item"><span class="item-name">Azteca de Oro</span><span class="price">$45.00</span><span class="price">$400.00</span></div>
+            <div class="menu-item"><span class="item-name">Torres 10</span><span class="price">$60.00</span><span class="price">$600.00</span></div>
+            <h2>Vodka</h2>
+            <div class="menu-item"><span class="item-name">Smirnoff</span><span class="price">$50.00</span><span class="price">$500.00</span></div>
+            <div class="menu-item"><span class="item-name">Wiborowa</span><span class="price">$50.00</span><span class="price">$500.00</span></div>
+            <div class="menu-item"><span class="item-name">Absolut</span><span class="price">$55.00</span><span class="price">$600.00</span></div>
+            <h2>Ginebra</h2>
+            <div class="menu-item"><span class="item-name">Oso negro</span><span class="price">$35.00</span><span class="price">$300.00</span></div>
+            <div class="menu-item"><span class="item-name">Beefeater</span><span class="price">$100.00</span><span class="price">$1,000.00</span></div>
+            <h2>Tequila</h2>
+            <div class="menu-item"><span class="item-name">Cazadores</span><span class="price">$80.00</span><span class="price">$700.00</span></div>
+            <div class="menu-item"><span class="item-name">Jimador</span><span class="price">$80.00</span><span class="price">$700.00</span></div>
+            <div class="menu-item"><span class="item-name">Tradicional</span><span class="price">$80.00</span><span class="price">$700.00</span></div>
+            <div class="menu-item"><span class="item-name">Hornitos</span><span class="price">$100.00</span><span class="price">$1,000.00</span></div>
+            <div class="menu-item"><span class="item-name">Centenario</span><span class="price">$100.00</span><span class="price">$1,000.00</span></div>
+            <div class="menu-item"><span class="item-name">Herradura reposado</span><span class="price">$140.00</span><span class="price">$1,400.00</span></div>
+            <div class="menu-item"><span class="item-name">Don Julio</span><span class="price">$140.00</span><span class="price">$1,400.00</span></div>
+            <div class="menu-item"><span class="item-name">Maestro Dobel</span><span class="price">$140.00</span><span class="price">$1,400.00</span></div>
+            <div class="menu-item"><span class="item-name">Don Julio 70</span><span class="price">$200.00</span><span class="price">$2,100.00</span></div>
+            <h2>Whiskey</h2>
+            <div class="menu-item"><span class="item-name">Etiqueta roja</span><span class="price">$80.00</span><span class="price">$800.00</span></div>
+            <div class="menu-item"><span class="item-name">Chivas Regal</span><span class="price">$170.00</span><span class="price">$1,700.00</span></div>
+            <div class="menu-item"><span class="item-name">Etieuta negra</span><span class="price">$180.00</span><span class="price">$1,800.00</span></div>
+            <div class="menu-item"><span class="item-name">Buchanan's</span><span class="price">$180.00</span><span class="price">$1,800.00</span></div>
+            <h2>Cognac</h2>
+            <div class="menu-item"><span class="item-name">Hennesy</span><span class="price">$230.00</span><span class="price">$2,300.00</span></div>
+            <div class="menu-item"><span class="item-name">Martell</span><span class="price">$340.00</span><span class="price">$3,400.00</span></div>
+            <div class="menu-item"><span class="item-name">Courvosier</span><span class="price"></span><span class="price">$4,000.00</span></div>
+            <h2>Licor</h2>
+            <div class="menu-item"><span class="item-name">Kalua</span><span class="price">$50.00</span></div>
+            <div class="menu-item"><span class="item-name">Bayles</span><span class="price">$70.00</span></div>
+            <div class="menu-item"><span class="item-name">Amareto</span><span class="price">$100.00</span></div>
+            <h2>Vino blanco</h2>
+            <div class="menu-item"><span class="item-name">Blanc de Blanc la Cetto</span><span class="price">$100.00</span></div>
+            <div class="menu-item"><span class="item-name">Rene Bordiere</span><span class="price">$430.00</span></div>
+            <div class="menu-item"><span class="item-name">Analogia</span><span class="price">$500.00</span></div>
+            <h2>Vino tinto</h2>
+            <div class="menu-item"><span class="item-name">Cabernet Sauvignon Cetto (187ml)</span><span class="price">$100.00</span></div>
+            <div class="menu-item"><span class="item-name">Merlot la Cetto</span><span class="price">$350.00</span></div>
+            <div class="menu-item"><span class="item-name">Cabernet Sauvignon Cetto</span><span class="price">$350.00</span></div>
+            <div class="menu-item"><span class="item-name">Merlot Tierrejan</span><span class="price">$500.00</span></div>
+            <div class="menu-item"><span class="item-name">Casillero del Diablo</span><span class="price">$550.00</span></div>
+            <div class="menu-item"><span class="item-name">3V Parras</span><span class="price">$800.00</span></div>
+            <h2>Champagne</h2>
+            <div class="menu-item"><span class="item-name">Cava Freixenet</span><span class="price">$750.00</span></div>
+            <div class="menu-item"><span class="item-name">Moet Chandon Champagne</span><span class="price">$2,500.00</span></div>
+            <a href="#Portada"><button class="btn01">MENU PRINCIPAL</button></a>
+        </div>
+    </section>
+
+    <section id="Bebidas">
+        <div class="contenedor">
+            <div class="categoria">Bebidas Preparadas</div>
+            <div class="menu-item"><span class="item-name">Limonada natural</span><span class="price">$30.00</span></div>
+            <div class="menu-item"><span class="item-name">Limonada mineral</span><span class="price">$35.00</span></div>
+            <div class="menu-item"><span class="item-name">Naranjada natural</span><span class="price">$30.00</span></div>
+            <div class="menu-item"><span class="item-name">Naranjada mineral</span><span class="price">$35.00</span></div>
+            <div class="menu-item"><span class="item-name">Clamato sin licor</span><span class="price">$60.00</span></div>
+            <div class="menu-item"><span class="item-name">Clamato con licor</span><span class="price">$80.00</span></div>
+            <div class="menu-item"><span class="item-name">Caribe Cooler durazno</span><span class="price">$40.00</span></div>
+            <div class="menu-item"><span class="item-name">Caribe Cooler fresa</span><span class="price">$40.00</span></div>
+            <div class="menu-item"><span class="item-name">Caribe Cooler tinto</span><span class="price">$40.00</span></div>
+            <div class="menu-item"><span class="item-name">Vampiro</span><span class="price">$80.00</span></div>
+            <div class="menu-item"><span class="item-name">Margarita</span><span class="price">$80.00</span></div>
+            <div class="menu-item"><span class="item-name">Piña colada</span><span class="price">$80.00</span></div>
+            <div class="menu-item"><span class="item-name">Piña colada virgen</span><span class="price">$80.00</span></div>
+            <a href="#Portada"><button class="btn01">MENU PRINCIPAL</button></a>
+        </div>
+    </section>
+
+    <section id="Farmacia">
+        <div class="contenedor">
+            <div class="categoria">Farmacia</div>
+            <div class="menu-item"><span class="item-name">Aspirinas</span><span class="price">10.00</span></div>
+            <div class="menu-item"><span class="item-name">Gel para el cabello</span><span class="price">10.00</span></div>
+            <div class="menu-item"><span class="item-name">Alka-Seltser</span><span class="price">10.00</span></div>
+            <div class="menu-item"><span class="item-name">Sal de uvas</span><span class="price">10.00</span></div>
+            <div class="menu-item"><span class="item-name">Burbujas</span><span class="price">$15.00</span></div>
+            <div class="menu-item"><span class="item-name">Toallas sanitarias</span><span class="price">$15.00</span></div>
+            <div class="menu-item"><span class="item-name">Tampax</span><span class="price">$20.00</span></div>
+            <div class="menu-item"><span class="item-name">Rastrillo</span><span class="price">$20.00</span></div>
+            <div class="menu-item"><span class="item-name">Pastillas Halls</span><span class="price">$20.00</span></div>
+            <div class="menu-item"><span class="item-name">Aceite Menen</span><span class="price">$25.00</span></div>
+            <div class="menu-item"><span class="item-name">Cepillo para el pelo</span><span class="price">$25.00</span></div>
+            <div class="menu-item"><span class="item-name">Encendedor</span><span class="price">$30.00</span></div>
+            <div class="menu-item"><span class="item-name">Cepillo dental</span><span class="price">$30.00</span></div>
+            <div class="menu-item"><span class="item-name">Pasta dental</span><span class="price">$30.00</span></div>
+            <div class="menu-item"><span class="item-name">Desodorante para dama</span><span class="price">$50.00</span></div>
+            <div class="menu-item"><span class="item-name">Desodorante para caballero</span><span class="price">$50.00</span></div>
+            <div class="menu-item"><span class="item-name">Sildenafil</span><span class="price">$100.00</span></div>
+            <div class="menu-item"><span class="item-name">Pastilla dia después</span><span class="price">$250.00</span></div>
+            <div class="menu-item"><span class="item-name">Viagra 100</span><span class="price">$350.00</span></div>
+            <div class="menu-item"><span class="item-name">Cialis</span><span class="price">$550.00</span></div>
+            <div class="menu-item"><span class="item-name">Marlboro rojo</span><span class="price">$110.00</span></div>
+            <div class="menu-item"><span class="item-name">Marlboro blanco</span><span class="price">$110.00</span></div>
+            <div class="menu-item"><span class="item-name">Benson mentolado</span><span class="price">$110.00</span></div>
+            <a href="#Portada"><button class="btn01">MENU PRINCIPAL</button></a>
+        </div> 
+    </section>
+
+    <footer> Carretera Aeropuerto - San Pedro <br>Esquina con Periferico <br> 
+        Torreón, Coahuila <br> Tels: 8717-50-53-63, 8717-50-52-35 </footer>
+
+</body>
+</html>
